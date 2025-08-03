@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RapidFlex - Entregas de Última Milla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="estilos.css" rel="stylesheet" />
+
+  <!-- HOTFIX: recorta el espacio en blanco final sin mover posiciones -->
+  <style id="tail-trim-style">
+    :root { --tail-trim: 0px; }
+    /* Pseudo-element que resta altura del documento igual al 'tail' detectado */
+    body::after {
+      content: "";
+      display: block;
+      height: 0;
+      margin-bottom: calc(var(--tail-trim, 0px) * -1);
+    }
+    /* Seguridad extra */
+    html, body { overflow-x: hidden; }
+  </style>
+
+</head>
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Splash Loading -->
+  <div id="splash" class="splash">
+    <div class="loader-splash"></div>
+  </div>
+
+  <header>
+    <nav>
+      <div class="nav-logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <!-- Regular Nav Links -->
+      <div class="nav-links">
+        <a href="#">Servicios</a>
+        <a href="javascript:void(0)" class="btn-cotiza" onclick="openModal('modalEmpresa')">Quiero despachar</a>
+        <a href="javascript:void(0)" onclick="openModal('modalRepartidor')">Quiero ser repartidor</a>
+        <a href="#">Nosotros</a>
+      </div>
+      <!-- Slider Menu -->
+      <div id="sliderMenu" class="slider-menu">
+        <a href="#">Servicios</a>
+        <a href="javascript:void(0)" onclick="openModal('modalEmpresa')">Quiero despachar</a>
+        <a href="javascript:void(0)" onclick="openModal('modalRepartidor')">Quiero ser repartidor</a>
+        <a href="#">Nosotros</a>
+      </div>
+    </nav>
+    <div>
+    <div class="hero-text">
+      <h1>Somos tu aliado en entregas de última milla</h1>
+      <p>Entregas Same Day, Envíos Flex de <br>
+        Mercado Libre y más.</p>
+      <a href="javascript:void(0)" class="btn-cotiza" onclick="openModal('modalEmpresa')">Contáctanos</a>
+    </div>
+  <!-- Hero Carousel Controls -->
+  <button class="hero-arrow hero-arrow-left" aria-label="Imagen anterior" type="button">‹</button>
+  <button class="hero-arrow hero-arrow-right" aria-label="Imagen siguiente" type="button">›</button>
+</header>
+
+  <section class="servicios">
+    <div class="servicio">
+      <img src="tiempo.png" alt="Entrega Flex" />
+      <h2>Entrega Flex</h2>
+      <p>Recibe hoy mismo. Tus pedidos entregados en menos de 24 horas.</p>
+    </div>
+    <div class="servicio">
+      <img src="rayo.png" alt="Entrega Turbo" />
+      <h2>Entrega Turbo</h2>
+      <p>Máxima velocidad. Despachos prioritarios y urgentes, siempre a tiempo.</p>
+    </div>
+    <div class="servicio">
+      <img src="local.png" alt="Retiro en tienda" />
+      <h2>Retiro en tienda</h2>
+      <p>Puntos estratégicos para facilitar tu logística. Tú eliges dónde retirar.</p>
+    </div>
+  </section>
+  
+  <section class="secciones-comunas">
+    <div class="contenidos-comunas">
+      <h2>Seguimiento para tus envíos</h2>
+      <div>
+        <p>
+          Con nuestra plataforma de seguimiento en 
+          <span class="destacar"><strong>tiempo real</strong></span>, ves cada<br>
+          movimiento de tu pedido: desde la recogida hasta la entrega final.
+        </p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="localizacion.png" alt="Localizacion">
+        <p>Geolocalización precisa del recorrido del paquete</p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="etapas.png" alt="Etapas">
+        <p>Actualización de cada etapa</p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="integracion.png" alt="Integración">
+        <p>Integración directa con Mercado Libre</p>
+      </div>
+    </div>
+    <div class="imagen-comunas">
+      <img src="comunas.png" alt="Comunas">
+    </div>
+  </section>
+
+  <section class="seccion-telefono">
+    <div class="contenido-telefono">
+      <h2>Seguimiento para tus envíos</h2>
+      <div>
+        <p>
+               Con nuestra plataforma de seguimiento en 
+              <span class="destacar"><strong>  tiempo real</strong></span>, ves cada
+             movimiento de tu pedido: desde la recogida hasta la entrega final.
+        </p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="localizacion.png" alt="Localizacion">
+        <p>Geolocalización precisa del recorrido del paquete</p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="etapas.png" alt="Etapas">
+        <p>Actualización de cada etapa</p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="integracion.png" alt="Integración">
+        <p>Integración directa con Mercado Libre</p>
+      </div>
+    </div>
+   
+    
+    <div class="imagen-telefono">
+      <img src="telefono-mapa.png" alt="Teléfono">
+      
+    </div>
+  </section>
+
+
+  <div class="imagen-ubicacion">
+    <img src="sombraderecorrido.png" alt="sombraderecorrido">
+  </div>
+
+  <section class="seccion-marketplaces2">
+    <div class="fila-inline">
+      <h2 class="col-titulo">Vehículos a&nbsp;</h2>
+      <p class="col-texto">Moto, auto o furgón según el</p><br>
+      
+    </div>
+
+    <div class="fila-inline">
+      <h2 class="col-titulo">tu medida:&nbsp;</h2>
+      <p class="col-texto">  tipo y volumen del pedido.</p><br>
+      
+    </div>
+  </section>
+  
+
+  <section class="seccion-seguridad">
+   
+   
+   
+    <div class="contenido-seguridad">
+      <h2>Tu tranquilidad garantizada</h2>
+      <div>
+        <p>
+          <span class="linea1">En Rapid Flex <strong>cuidamos cada entrega como propia.</strong></span>
+          <span class="linea2">Si algo no sale bien, cuentas con nuestro respaldo inmediato.</span>
+        </p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="peso.png" alt="Reembolso asegurado">
+        <p>Reembolso asegurado hasta $100.000 en máximo 5 días hábiles</p>
+      </div>
+      <div class="item-con-icono">
+        <img class="icono" src="humano.png" alt="Atención humana">
+        <p>Atención humana directa ante imprevistos</p>
+      </div>
+    </div>
+    <div class="imagen-cajas">
+      <img src="cajas-seguras.png" alt="Cajas protegidas" />
+    </div>
+   
+ 
+  
+  
+  
+  </section>
+   
+    
+    <section class="seccion-marketplaces4"></section>
+   <!-- Franja azul fina (opcional) -->
+   <section class="seccion-marketplaces3">
+   
+
+  <!-- Marketplaces (el bloque del título/subtítulo) -->
+  <section class="seccion-marketplaces">
+    <h2>¿Vendes en estos marketplaces?</h2>
+    <h3>¡Entregamos por ti!</h3>
+    <p>Integramos Rapid Flex con tus canales de venta favoritos para que entregues más rápido, sin complicarte.</p>
+  </section>
+
+  <!-- Logos de integraciones -->
+  <section class="seccion-integraciones">
+    <div class="integraciones-container">
+      <button class="integracion-btn"><img src="mercadolibre.png" alt="Mercado Libre"></button>
+      <button class="integracion-btn"><img src="shopify.png" alt="Shopify"></button>
+      <button class="integracion-btn"><img src="walmart.png" alt="Walmart"></button>
+      <button class="integracion-btn"><img src="ripley.png" alt="Ripley"></button>
+      <button class="integracion-btn"><img src="falabella.png" alt="Falabella"></button>
+      <button class="integracion-btn"><img src="jumpseller.png" alt="Jumpseller"></button>
+      <button class="integracion-btn"><img src="paris.png" alt="Paris"></button>
+    </div>
+  </section>
+   <!-- Contacto -->
+  <section class="seccion-contacto" id="contacto">
+    <!-- Columna izquierda -->
+    <div class="col-izq">
+      <h3 class="titulo-cols">SUCURSALES</h3>
+      <div class="sep-fino"></div>
+
+      <div class="ciudad">Santiago</div>
+      <div class="dato">Issa Pichara 830 Bodega 3A</div>
+      <div class="dato">Renca</div>
+
+      <h3 class="titulo-cols mt-32">CONTÁCTANOS</h3>
+      <div class="sep-fino"></div>
+
+      <p class="ayuda">
+        Estamos aquí para resolver tus dudas, ayudarte a elegir el
+        mejor servicio o simplemente conversar.
+      </p>
+
+      <!-- Enlaces clicables -->
+      <a class="pill-link" href="mailto:rapid@rapidflex.cl">Correo: rapid@rapidflex.cl</a>
+      <a class="pill-link" href="https://wa.me/56949399570" target="_blank" rel="noopener">
+        Whatsapp: 9 4939 9570
+      </a>
+      <a class="btn-verde mt-20"
+         href="https://wa.me/56949399570?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+         target="_blank" rel="noopener">
+        CONTACTAR
+      </a>
+    </div>
+
+    <!-- Columna derecha (mapa) -->
+    <div class="col-der">
+      <div class="mapa-wrap">
+        <iframe
+          class="mapa"
+          src="https://www.google.com/maps?q=Issa+Pichara+830+Bodega+3A+Renca+Santiago+Chile&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+     
+   
+   <footer>
+    <p>RapidFlex &copy; 2025 - Todos los derechos reservados</p>
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/rapidflex.flex/" target="_blank"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="https://www.tiktok.com/@rapid.flex" target="_blank"><img src="tiktok.png" alt="TikTok" /></a>
+      <a href="https://www.facebook.com/profile.php?id=61577021292544" target="_blank"><img src="facebook.png" alt="Facebook" /></a>
+    </div>
+  </footer>
+
+</section>
+
+
+
+
+
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/56949399570?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="whatsapp-float" title="Escríbenos por WhatsApp" rel="noopener">
+    <img src="Whatsapapp.png" alt="WhatsApp" />
+  </a>
+
+  <!-- Modal Cotiza -->
+  <div id="modalEmpresa" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modalEmpresa')">&times;</span>
+      <h2>Cotización</h2>
+      <form id="empresaForm">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+        <input type="hidden" name="status" value="Nuevo">
+        <button type="submit">Enviar</button>
+        <div class="loader" id="loaderEmpresa"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Repartidor -->
+  <div id="modalRepartidor" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modalRepartidor')">&times;</span>
+      <h2>Registro Repartidor</h2>
+      <form id="repartidorForm">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+        <input type="hidden" name="status" value="Nuevo">
+        <button type="submit">Enviar</button>
+        <div class="loader" id="loaderRepartidor"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="rapiflexd-script.js"></script>
+
+  <!-- Calcula el 'tail' (espacio vacío al final) y lo recorta dinámicamente -->
+  <script id="tail-trim-script">
+    (function(){
+      function computeTail() {
+      const EXTRA_TRIM = 400; // recorte adicional solicitado por el usuario
+        // Altura total del documento
+        const docHeight = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight,  document.documentElement.offsetHeight,
+          document.body.clientHeight,  document.documentElement.clientHeight
+        );
+        // Calcula la Y del elemento más bajo realmente visible
+        const nodes = Array.from(document.body.querySelectorAll('header, main, section, footer, div, article'));
+        let bottomMax = 0;
+        const scrollY = window.scrollY || window.pageYOffset || 0;
+        nodes.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (!r || !isFinite(r.bottom)) return;
+          const absBottom = r.bottom + scrollY;
+          if (absBottom > bottomMax) bottomMax = absBottom;
+        });
+        let tail = Math.max(0, Math.ceil(docHeight - bottomMax));
+        // Limita el recorte a un rango razonable para evitar cortar contenido real
+        tail = Math.min(tail, 4000);
+        tail = Math.max(0, tail + EXTRA_TRIM);
+        document.documentElement.style.setProperty('--tail-trim', tail + 'px');
+      }
+      window.addEventListener('load', computeTail);
+      window.addEventListener('resize', computeTail);
+      // Recalcula si hay imágenes que cargan tarde
+      const ro = new ResizeObserver(computeTail);
+      ro.observe(document.body);
+    })();
+  </script>
+
+<script>
+  // Config: imágenes y control de texto por slide
+  window.HERO_IMAGES = ['banner.png','comunas.png','walmart.png'];
+  const ocultar = new Set(['comunas.png','walmart.png']);
+  window.HERO_CAPTIONS = window.HERO_IMAGES.map(name => ocultar.has(name) ? null : undefined);
+  // window.HERO_AUTOPLAY_MS = 5000; // opcional
+</script>
+<script src="rapiflexd-hero.js"></script>
+<section class="partners" aria-label="Integraciones y marketplaces">
+  <div class="partners-grid">
+    <img src="shopify.png" alt="Shopify" loading="lazy">
+    <img src="jumpseller.png" alt="Jumpseller" loading="lazy">
+    <img src="mercadolibre.png" alt="Mercado Libre" loading="lazy">
+    <img src="falabella.png" alt="Falabella" loading="lazy">
+    <img src="walmart.png" alt="Walmart" loading="lazy">
+    <img src="ripley.png" alt="Ripley" loading="lazy">
+    <img src="paris.png" alt="Paris" loading="lazy">
+  </div>
+</section>
+</body>
+</html>
